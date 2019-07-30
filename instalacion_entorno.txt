@@ -18,7 +18,7 @@ sudo chmod 755 ~/.config # Revert permission
 sudo apt install git # Install git
 sudo npm install -g remix-ide # install remix-ide
 
-sudo npm install sloc
+sudo npm install solc
 
 https://www.codeooze.com/blockchain/ethereum-dev-environment-2019/
 
