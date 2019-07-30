@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def git_config():
-	'''Script de configuración del entorno de git'''
+	'''Configuración de la información de Git'''
 
 	nombre_completo = input("Escribe tu nombre completo: ")
 	email = input("Escribe tu email: ")
