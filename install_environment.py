@@ -19,37 +19,46 @@ def parse_versions():
 	
 if __name__ == "__main__":
 	# Some colours
-	MAGENTA = "\033[1;35;95m"
+	GREEN = "\033[10;30;92m"
 	NORMAL = "\033[1;37;0m"
 
-	print(MAGENTA + "Obteniendo versiones específicas de los paquetes" + NORMAL)
+	print(GREEN + "Obteniendo versiones específicas de los paquetes" + NORMAL)
 	versions = parse_versions()
-	"""
-	print(MAGENTA + "Añadiendo PPA de ethereum (ppa:ethereum/ethereum)" + NORMAL)
+
+	print(GREEN + "Añadiendo PPA de ethereum (ppa:ethereum/ethereum)" + NORMAL)
 	os.system("sudo add-apt-repository -y ppa:ethereum/ethereum")
 
-	print(MAGENTA + "Actualizando el sistema" + NORMAL)
-	val = os.system("sudo apt -y update")
-	print(val)
-	#val = os.system("sudo apt -y upgrade --fix-missing")
-	print(val) # TODO Comprobar si el código de salida es 0 ??
+	print(GREEN + "Actualizando el sistema" + NORMAL)
+	os.system("sudo apt -y update && sudo apt -y upgrade")
 
-	print(MAGENTA + "Instalando curl"+ NORMAL)
+	print(GREEN + "Instalando curl"+ NORMAL)
 	os.system("sudo apt install -y curl")
 
-	print(MAGENTA + "Instalando npm"+ NORMAL)
+	print(GREEN + "Instalando npm"+ NORMAL)
 	os.system("sudo apt install -y npm")
 
-	print(MAGENTA + "Instalando nodejs"+ NORMAL)
+	print(GREEN + "Instalando nodejs"+ NORMAL)
 	os.system("sudo apt install -y nodejs")
 
-	print(MAGENTA + "Instalando ethereum"+ NORMAL)
+	print(GREEN + "Instalando ethereum"+ NORMAL)
 	os.system("sudo apt install -y ethereum")
 
-	print(MAGENTA + "Instalando git"+ NORMAL)
+	print(GREEN + "Instalando git"+ NORMAL)
 	os.system("sudo apt install -y git")
-	"""
-	print(MAGENTA + "Instalando ganache-cli"+ NORMAL)
-	print("ganache", versions["ganache-cli"])
-	os.system("npm install -g ganache-cli" + versions["ganache-cli"])
+	
+	print(GREEN + "Instalando truffle"+ NORMAL)
+	os.system("sudo chmod 777 ~/.config") # Permission problem at installing in ~/.config
+	os.system("sudo npm install -g truffle" + versions["truffle"])
+	os.system("sudo chmod 755 ~/.config") # Revert permissions
+	os.system("sudo chmod -R --silent 777 ~/.config/truffle") # Grant permissions for truffle
 
+	print(GREEN + "Instalando ganache-cli"+ NORMAL)
+	os.system("sudo npm install -g ganache-cli" + versions["ganache-cli"])
+	
+	print(GREEN + "Instalando remix-ide"+ NORMAL)
+	os.system("sudo npm install -g remix-ide" + versions["remix-ide"])
+	
+	print(GREEN + "Instalando solc"+ NORMAL)
+	os.system("sudo npm install -g solc" + versions["solc"])
+
+	print(GREEN + "Instalación terminada")
