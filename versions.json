@@ -2,5 +2,5 @@
 	"ganache-cli": "",
 	"truffle": "",
 	"remix-ide": "",
-	"sloc": ""
+	"solc": ""
 }
