@@ -35,12 +35,18 @@ def modificar_prompt():
 	print("Fichero ~/.bashrc modificado")
 
 if __name__ == "__main__":
+	# Some colours
+	GREEN = "\033[10;30;92m"
+	NORMAL = "\033[1;37;0m"
+
 	yes = {'yes', 'y', 'ye', 'si', 's', ''}
 
-	opcion = input("¿Quieres modificar tus datos de git globales? [S/n]: ").lower()
+	opcion = input(GREEN +"¿Quieres modificar tus datos de git globales? [S/n]: " + NORMAL).lower()
 	if opcion in yes:	
 		git_config()
 
-	opcion = input("¿Quieres añadir el nombre de la rama actual al prompt? [S/n]: ").lower()
+	opcion = input(GREEN + "¿Quieres añadir el nombre de la rama actual al prompt? [S/n]: " + NORMAL).lower()
 	if opcion in yes:
 		modificar_prompt()
+	
+	print(GREEN + "Fin")
