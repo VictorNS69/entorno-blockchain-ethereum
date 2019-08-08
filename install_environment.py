@@ -24,9 +24,11 @@ if __name__ == "__main__":
 
 	print(GREEN + "Obteniendo versiones específicas de los paquetes" + NORMAL)
 	versions = parse_versions()
-
-	print(GREEN + "Añadiendo PPA de ethereum (ppa:ethereum/ethereum)" + NORMAL)
-	os.system("sudo add-apt-repository -y ppa:ethereum/ethereum")
+	
+	ppa_dir = "/etc/apt/sources.list.d/ethereum-ubuntu-ethereum-bionic.list"
+	if not os.path.exists(ppa_dir) or os.path.getsize(ppa_dir) == 0:
+		print(GREEN + "Añadiendo PPA de ethereum (ppa:ethereum/ethereum)" + NORMAL)
+		os.system("sudo add-apt-repository -y ppa:ethereum/ethereum")
 
 	print(GREEN + "Actualizando el sistema" + NORMAL)
 	os.system("sudo apt -y update && sudo apt -y upgrade")
