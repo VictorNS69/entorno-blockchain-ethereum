@@ -20,6 +20,12 @@ sudo npm install -g remix-ide # install remix-ide
 
 sudo npm install solc
 
+//TODO:
+npm install web3
+web-utils
+ethereumjs-tx
+
+
 https://www.codeooze.com/blockchain/ethereum-dev-environment-2019/
 
 https://medium.com/coinmonks/setting-up-remix-ide-for-solidity-development-1a30f227b600
