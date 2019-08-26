@@ -1,4 +1,4 @@
-# Script de instalación de paquetes básicos para trabajar en una blockchain
+# Script de instalación de paquetes básicos para trabajar en una blockchain de Ethereum
 
 ## Requisitos
 - Python 3.6 o superior
