@@ -2,6 +2,9 @@
 
 ## Requisitos
 - Python 3.6 o superior
+```sh
+apt install python3
+```
 - Conexión a internet
 ## Ficheros 
 - **versions.json**: Archivo que especifica las versiones a instalar de algunos paquete.
