@@ -1,6 +1,7 @@
 # Script de instalación de paquetes básicos para trabajar en una blockchain de Ethereum
 
 ## Requisitos
+- Sistema Operativo **Ubuntu**
 - Python 3.6 o superior
 ```sh
 apt install python3
